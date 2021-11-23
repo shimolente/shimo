@@ -2,7 +2,6 @@ package id.shimo.mindfulness;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
 
 import id.shimo.mindfulness.helper.DBHelper;
 
@@ -57,8 +53,8 @@ public class UpdateActivity extends AppCompatActivity {
         datetime = intent.getStringExtra("DateTime");
         id = intent.getIntExtra("Id", 0);
 
-        etBestThing = findViewById(R.id.bestThing);
-        etWorstThing = findViewById(R.id.worstThing);
+        etBestThing = findViewById(R.id.username);
+        etWorstThing = findViewById(R.id.password);
         seekRate = findViewById(R.id.rateSeek);
         tvRate = findViewById(R.id.ratetextvalue);
 
@@ -97,7 +93,7 @@ public class UpdateActivity extends AppCompatActivity {
 
         checkOnClick();
 
-        btnSubmit = (Button) findViewById(R.id.button);
+        btnSubmit = (Button) findViewById(R.id.login);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

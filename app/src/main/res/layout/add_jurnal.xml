@@ -56,7 +56,7 @@
             app:srcCompat="@drawable/gray_bg" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/bestThing"
+            android:id="@+id/username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/worstThing"
+            android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:hint="The worst thing that happened today"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bestThing">
+            app:layout_constraintTop_toBottomOf="@+id/username">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -104,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.522"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/worstThing"
+            app:layout_constraintTop_toBottomOf="@+id/password"
             app:srcCompat="@drawable/gray_bg" />
 
         <TextView
@@ -230,9 +230,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_bold"
             android:text="0"
-            android:textColor="#F44336"
+            android:textColor="#D65A5A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ratetext"
             app:layout_constraintTop_toBottomOf="@+id/addLine4" />
@@ -250,12 +250,14 @@
             app:layout_constraintTop_toBottomOf="@+id/ratetext" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="204dp"
-            android:text="Login"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp"
+            android:text="Add Today's Journal"
             app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"

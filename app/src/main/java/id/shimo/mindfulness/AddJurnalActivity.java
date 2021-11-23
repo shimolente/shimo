@@ -41,10 +41,12 @@ public class AddJurnalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getActionBar().setTitle("Today's Journey");
+        getSupportActionBar().setTitle("Today's Journey");
         setContentView(R.layout.add_jurnal);
 
-        etBestThing = findViewById(R.id.bestThing);
-        etWorstThing = findViewById(R.id.worstThing);
+        etBestThing = findViewById(R.id.username);
+        etWorstThing = findViewById(R.id.password);
         seekRate = findViewById(R.id.rateSeek);
         tvRate = findViewById(R.id.ratetextvalue);
 
@@ -71,7 +73,7 @@ public class AddJurnalActivity extends AppCompatActivity {
         didChecks = new ArrayList<>();
         checkOnClick();
 
-        btnSubmit = (Button) findViewById(R.id.button);
+        btnSubmit = (Button) findViewById(R.id.login);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,8 +99,8 @@ public class AddJurnalActivity extends AppCompatActivity {
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioButton = (RadioButton) findViewById(selectedId);
 
-        tvBestThing = (TextView) dialogView.findViewById(R.id.bestThing);
-        tvWorstThing = (TextView) dialogView.findViewById(R.id.worstThing);
+        tvBestThing = (TextView) dialogView.findViewById(R.id.username);
+        tvWorstThing = (TextView) dialogView.findViewById(R.id.password);
         tvSeekRate = (TextView) dialogView.findViewById(R.id.seekRate);
         tvRadioResult = (TextView) dialogView.findViewById(R.id.radioResult);
         tvCheckResult = (TextView) dialogView.findViewById(R.id.checkResult);

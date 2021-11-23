@@ -8,16 +8,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Calendar;
 
 import id.shimo.mindfulness.helper.DBHelper;
 
@@ -41,8 +36,8 @@ public class DetailActivity extends AppCompatActivity {
         datetime = intent.getStringExtra("DateTime");
         id = intent.getIntExtra("Id", 0);
 
-        tvBestThing = (TextView) findViewById(R.id.bestThing);
-        tvWorstThing = (TextView) findViewById(R.id.worstThing);
+        tvBestThing = (TextView) findViewById(R.id.username);
+        tvWorstThing = (TextView) findViewById(R.id.password);
         tvSeekRate = (TextView) findViewById(R.id.seekRate);
         tvRadioResult = (TextView) findViewById(R.id.radioResult);
         tvCheckResult = (TextView) findViewById(R.id.checkResult);
