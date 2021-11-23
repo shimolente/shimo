@@ -11,6 +11,10 @@
         android:theme="@style/Theme.Mindfulness">
         <activity
             android:name=".MainActivity"
+            >
+        </activity>
+        <activity
+            android:name=".AddJurnalActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
