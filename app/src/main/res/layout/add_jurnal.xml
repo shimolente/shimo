@@ -147,8 +147,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="How would you rate your day"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ratetextvalue"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/careCheck" />
+    <TextView
+        android:id="@+id/ratetextvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ratetext"
         app:layout_constraintTop_toBottomOf="@+id/careCheck" />
 
     <SeekBar
