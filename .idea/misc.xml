@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Github/shimo/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
         <entry key="..\:/Github/shimo/app/src/main/res/layout/add_jurnal.xml" value="0.33796296296296297" />
         <entry key="..\:/Github/shimo/app/src/main/res/layout/detail.xml" value="0.536" />
+=======
+        <entry key="..\:/shimo/app/src/main/res/drawable/add.xml" value="0.2703125" />
+        <entry key="..\:/shimo/app/src/main/res/drawable/gray_bg.xml" value="0.2703125" />
+        <entry key="..\:/shimo/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/shimo/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/shimo/app/src/main/res/layout/add_jurnal.xml" value="0.25416666666666665" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

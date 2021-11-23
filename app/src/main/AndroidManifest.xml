@@ -9,12 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mindfulness">
-        <activity
-            android:name=".MainActivity"
-            >
-        </activity>
-        <activity
-            android:name=".AddJurnalActivity"
+        <activity android:name=".Home"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".AddJurnalActivity">
+        </activity>
     </application>
 
 </manifest>
