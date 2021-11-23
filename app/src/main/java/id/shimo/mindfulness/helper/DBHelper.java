@@ -23,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String RATE_COLUMN = "rate";
     private static final String WELLNESS_COLUMN = "wellness";
     private static final String DID_COLUMN = "did";
+    private static final String DATETIME_COLUMN = "datetime";
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,7 +39,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 +WORST_THING_COLUMN+" TEXT, "
                 +RATE_COLUMN+" TEXT, "
                 +WELLNESS_COLUMN+" TEXT, "
-                +DID_COLUMN+" TEXT)");
+                +DID_COLUMN+" TEXT, "
+                +DATETIME_COLUMN+" TEXT)");
     }
 
     @Override
@@ -46,7 +48,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insertJournal (String bestThing, String worstThing, String rate, String wellness, String did){
+    public void insertJournal (String bestThing, String worstThing, String rate, String wellness, String did, String datetime){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(BEST_THING_COLUMN, bestThing);
@@ -54,6 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(RATE_COLUMN, rate);
         contentValues.put(WELLNESS_COLUMN, wellness);
         contentValues.put(DID_COLUMN, did);
+        contentValues.put(DATETIME_COLUMN, datetime);
         db.insert(TABLE_NAME, null, contentValues);
     }
 
@@ -73,7 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void updateJournal (Integer id, String bestThing, String worstThing, String rate, String wellness, String did){
+    public void updateJournal (Integer id, String bestThing, String worstThing, String rate, String wellness, String did, String datetime){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(BEST_THING_COLUMN, bestThing);
@@ -81,6 +84,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(RATE_COLUMN, rate);
         contentValues.put(WELLNESS_COLUMN, wellness);
         contentValues.put(DID_COLUMN, did);
+        contentValues.put(DATETIME_COLUMN, datetime);
         if(db.update(TABLE_NAME, contentValues, ID_COLUMN + "=" + id, null) > 0){
             Toast.makeText(context, "Update Success", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(context, Home.class);

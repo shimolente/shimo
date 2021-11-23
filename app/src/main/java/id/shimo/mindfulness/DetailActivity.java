@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
-    private TextView tvRate, tvBestThing, tvWorstThing, tvSeekRate, tvRadioResult, tvCheckResult;
+    private TextView tvRate, tvDatetime, tvBestThing, tvWorstThing, tvSeekRate, tvRadioResult, tvCheckResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +24,21 @@ public class DetailActivity extends AppCompatActivity {
         String rate = intent.getStringExtra("Rate");
         String radioButton = intent.getStringExtra("RadioButton");
         String check = intent.getStringExtra("Check");
+        String datetime = intent.getStringExtra("DateTime");
 
         tvBestThing = (TextView) findViewById(R.id.bestThing);
         tvWorstThing = (TextView) findViewById(R.id.worstThing);
         tvSeekRate = (TextView) findViewById(R.id.seekRate);
         tvRadioResult = (TextView) findViewById(R.id.radioResult);
         tvCheckResult = (TextView) findViewById(R.id.checkResult);
+        tvDatetime = (TextView) findViewById(R.id.datetime);
 
         tvBestThing.setText(bestThing);
         tvWorstThing.setText(worstThing);
         tvSeekRate.setText(rate);
         tvRadioResult.setText(radioButton);
         tvCheckResult.setText(check);
+        tvDatetime.setText(datetime);
     }
 
     @Override

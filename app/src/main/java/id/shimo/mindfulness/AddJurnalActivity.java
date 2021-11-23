@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import id.shimo.mindfulness.helper.DBHelper;
 
@@ -34,7 +35,7 @@ public class AddJurnalActivity extends AppCompatActivity {
     private StringBuilder stringChecks;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    private TextView tvRate, tvBestThing, tvWorstThing, tvSeekRate, tvRadioResult, tvCheckResult;
+    private TextView tvRate, tvBestThing, tvWorstThing, tvSeekRate, tvRadioResult, tvCheckResult, tvDatetime;
     private DBHelper db;
 
     @Override
@@ -101,12 +102,14 @@ public class AddJurnalActivity extends AppCompatActivity {
         tvSeekRate = (TextView) dialogView.findViewById(R.id.seekRate);
         tvRadioResult = (TextView) dialogView.findViewById(R.id.radioResult);
         tvCheckResult = (TextView) dialogView.findViewById(R.id.checkResult);
+        tvDatetime = (TextView) dialogView.findViewById(R.id.datetime);
 
         tvBestThing.setText(etBestThing.getEditText().getText().toString());
         tvWorstThing.setText(etWorstThing.getEditText().getText().toString());
         tvSeekRate.setText(tvRate.getText().toString());
         tvRadioResult.setText(radioButton.getText());
         tvCheckResult.setText(stringChecks);
+        tvDatetime.setText(Calendar.getInstance().getTime().toString());
 
         dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
             @Override
@@ -119,6 +122,7 @@ public class AddJurnalActivity extends AppCompatActivity {
                 intent.putExtra("Rate", tvRate.getText().toString());
                 intent.putExtra("RadioButton", radioButton.getText());
                 intent.putExtra("Check", stringChecks.toString());
+                intent.putExtra("DateTime", Calendar.getInstance().getTime().toString());
                 startActivity(intent);
             }
         });
@@ -171,6 +175,7 @@ public class AddJurnalActivity extends AppCompatActivity {
                 etWorstThing.getEditText().getText().toString(),
                 tvRate.getText().toString(),
                 radioButton.getText().toString(),
-                stringChecks.toString());
+                stringChecks.toString(),
+                Calendar.getInstance().getTime().toString());
     }
 }
