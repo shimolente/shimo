@@ -1,6 +1,7 @@
 package id.shimo.mindfulness;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -107,7 +108,13 @@ public class AddJurnalActivity extends AppCompatActivity {
         dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                Intent intent = new Intent(AddJurnalActivity.this, DetailActivity.class);
+                intent.putExtra("BestThing", etBestThing.getEditText().getText().toString());
+                intent.putExtra("WorstThing", etWorstThing.getEditText().getText().toString());
+                intent.putExtra("Rate", tvRate.getText().toString());
+                intent.putExtra("RadioButton", radioButton.getText());
+                intent.putExtra("Check", stringChecks.toString());
+                startActivity(intent);
             }
         });
 
