@@ -59,5 +59,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(DetailActivity.this, "onDestroy Running", Toast.LENGTH_SHORT).show();  }
+        Toast.makeText(DetailActivity.this, "onDestroy Running", Toast.LENGTH_SHORT).show();
     }
+}

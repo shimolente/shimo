@@ -19,6 +19,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
+import id.shimo.mindfulness.helper.DBHelper;
+
 public class AddJurnalActivity extends AppCompatActivity {
 
     private TextInputLayout etBestThing, etWorstThing;
@@ -33,6 +35,7 @@ public class AddJurnalActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private TextView tvRate, tvBestThing, tvWorstThing, tvSeekRate, tvRadioResult, tvCheckResult;
+    private DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +111,8 @@ public class AddJurnalActivity extends AppCompatActivity {
         dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                saveDataToDB();
+
                 Intent intent = new Intent(AddJurnalActivity.this, DetailActivity.class);
                 intent.putExtra("BestThing", etBestThing.getEditText().getText().toString());
                 intent.putExtra("WorstThing", etWorstThing.getEditText().getText().toString());
@@ -158,5 +163,14 @@ public class AddJurnalActivity extends AppCompatActivity {
                     didChecks.remove(careCheck.getText().toString());
             }
         });
+    }
+
+    private void saveDataToDB(){
+        db = new DBHelper(this);
+        db.insertJournal(etBestThing.getEditText().getText().toString(),
+                etWorstThing.getEditText().getText().toString(),
+                tvRate.getText().toString(),
+                radioButton.getText().toString(),
+                stringChecks.toString());
     }
 }
